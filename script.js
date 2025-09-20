@@ -28,6 +28,78 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const themeToggle = select('#theme-toggle');
+  const THEME_STORAGE_KEY = 'theme-preference';
+
+  const readStoredTheme = () => {
+    try {
+      return localStorage.getItem(THEME_STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const writeStoredTheme = (value) => {
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, value);
+    } catch (error) {
+      // Storage might be unavailable (e.g., private mode)
+    }
+  };
+
+  const applyTheme = (theme) => {
+    const isLight = theme === 'light';
+    document.body.classList.toggle('theme-light', isLight);
+
+    if (themeToggle) {
+      const targetLabel = isLight
+        ? 'Switch to dark theme'
+        : 'Switch to light theme';
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+      themeToggle.setAttribute('aria-label', targetLabel);
+      themeToggle.setAttribute('title', targetLabel);
+      themeToggle.dataset.theme = isLight ? 'light' : 'dark';
+    }
+  };
+
+  const storedTheme = readStoredTheme();
+  const prefersLight =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initialTheme =
+    storedTheme === 'light' || storedTheme === 'dark'
+      ? storedTheme
+      : prefersLight
+      ? 'light'
+      : 'dark';
+
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('theme-light')
+        ? 'dark'
+        : 'light';
+      applyTheme(nextTheme);
+      writeStoredTheme(nextTheme);
+    });
+  }
+
+  if (!storedTheme && typeof window.matchMedia === 'function') {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handlePreferenceChange = (event) => {
+      if (!readStoredTheme()) {
+        applyTheme(event.matches ? 'light' : 'dark');
+      }
+    };
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handlePreferenceChange);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handlePreferenceChange);
+    }
+  }
+
   const scrollButtons = selectAll('[data-scroll-to]');
   scrollButtons.forEach((button) => {
     button.addEventListener('click', () => {

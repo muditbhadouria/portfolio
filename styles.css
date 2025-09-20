@@ -10,6 +10,12 @@
   --color-text: #f6f7fb;
   --color-text-secondary: #b5bece;
   --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-border-active: rgba(76, 125, 240, 0.35);
+  --color-header: rgba(16, 18, 22, 0.93);
+  --color-secondary-surface: rgba(255, 255, 255, 0.08);
+  --color-pill-bg: rgba(255, 255, 255, 0.08);
+  --color-top-link-bg: rgba(255, 255, 255, 0.06);
   --shadow-soft: 0 15px 35px rgba(10, 15, 24, 0.35);
   --shadow-card: 0 12px 24px rgba(10, 15, 24, 0.22);
   --gutter: clamp(1.5rem, 4vw, 3.5rem);
@@ -30,6 +36,26 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   font-size: clamp(1rem, 0.95rem + 0.2vw, 1.05rem);
+  color-scheme: dark;
+}
+
+body.theme-light {
+  --color-bg: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef2ff;
+  --color-card: #ffffff;
+  --color-text: #111827;
+  --color-text-secondary: #4b5563;
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-border-strong: rgba(76, 125, 240, 0.28);
+  --color-border-active: rgba(76, 125, 240, 0.45);
+  --color-header: rgba(255, 255, 255, 0.9);
+  --color-secondary-surface: rgba(76, 125, 240, 0.12);
+  --color-pill-bg: rgba(76, 125, 240, 0.14);
+  --color-top-link-bg: rgba(76, 125, 240, 0.1);
+  --shadow-soft: 0 15px 35px rgba(15, 23, 42, 0.12);
+  --shadow-card: 0 12px 24px rgba(15, 23, 42, 0.1);
+  color-scheme: light;
 }
 
 a {
@@ -57,7 +83,7 @@ img {
   top: 0;
   width: 100%;
   z-index: 10;
-  background: rgba(16, 18, 22, 0.93);
+  background: var(--color-header);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(18px);
 }
@@ -67,6 +93,14 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
 }
 
 .brand {
@@ -148,6 +182,56 @@ img {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-top-link-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  border-color: var(--color-border-active);
+  background: var(--color-secondary-surface);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-toggle-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.theme-toggle-icon--dark {
+  display: inline-flex;
+}
+
+.theme-light .theme-toggle .theme-toggle-icon--dark {
+  display: none;
+}
+
+.theme-light .theme-toggle .theme-toggle-icon--light {
+  display: inline-flex;
+}
+
 .hero {
   padding: clamp(5rem, 8vw, 7rem) 0;
 }
@@ -200,9 +284,9 @@ img {
 }
 
 .btn.secondary {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-secondary-surface);
   color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-border-strong);
 }
 
 .hero-card {
@@ -351,7 +435,7 @@ img {
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(76, 125, 240, 0.35);
+  border-color: var(--color-border-active);
 }
 
 .project-category {
@@ -382,7 +466,7 @@ img {
 .project-tags li {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-pill-bg);
   font-size: 0.85rem;
 }
 
@@ -475,7 +559,7 @@ img {
 
 .top-link {
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-top-link-bg);
   color: var(--color-text);
   padding: 0.5rem 1rem;
   border-radius: 999px;
@@ -487,7 +571,7 @@ img {
 .top-link:hover,
 .top-link:focus {
   transform: translateY(-2px);
-  border-color: rgba(76, 125, 240, 0.4);
+  border-color: var(--color-border-active);
 }
 
 .sr-only {

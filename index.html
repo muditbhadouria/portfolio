@@ -24,29 +24,70 @@
           <span class="brand-mark" aria-hidden="true">MB</span>
           <span class="brand-name">Mudit Bhadouria</span>
         </a>
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="primary-navigation"
-        >
-          <span class="sr-only">Toggle navigation</span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-        <nav
-          id="primary-navigation"
-          class="primary-navigation"
-          aria-label="Main navigation"
-        >
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="header-actions">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+          <nav
+            id="primary-navigation"
+            class="primary-navigation"
+            aria-label="Main navigation"
+          >
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+          >
+            <span class="theme-toggle-icon theme-toggle-icon--dark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
+                />
+              </svg>
+            </span>
+            <span class="theme-toggle-icon theme-toggle-icon--light" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4.25"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  d="M12 2.5v2.25M12 19.25v2.25M4.5 12H2.25M21.75 12H19.5M5.75 5.75l-1.6-1.6M19.85 19.85l-1.6-1.6M5.75 18.25l-1.6 1.6M19.85 4.15l-1.6 1.6"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </header>
 
