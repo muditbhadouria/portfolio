@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mudit Bhadouria | Portfolio</title>
+    <meta
+      name="description"
+      content="Professional portfolio website for Mudit Bhadouria showcasing projects, skills, and contact information."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="Go to top">
+          <span class="brand-mark" aria-hidden="true">MB</span>
+          <span class="brand-name">Mudit Bhadouria</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Main navigation"
+        >
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">Software Developer</p>
+            <h1 id="hero-title">
+              Crafting reliable digital products with clean, scalable code.
+            </h1>
+            <p>
+              I build performant web applications with a focus on user
+              experience, maintainable architecture, and measurable business
+              value. Curious by nature, disciplined by craft.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn secondary" href="#contact">Let's Collaborate</a>
+            </div>
+          </div>
+          <div class="hero-card" aria-hidden="true">
+            <div class="hero-gradient"></div>
+            <p class="hero-card-title">Currently exploring</p>
+            <ul>
+              <li>Full-stack product development</li>
+              <li>Design systems at scale</li>
+              <li>AI-assisted developer tooling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container section-inner">
+          <div class="section-header">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">
+              Designer-friendly engineer with a product mindset.
+            </h2>
+          </div>
+          <div class="about-grid">
+            <p>
+              I have experience delivering end-to-end solutions for startups and
+              growth-stage companies. My approach blends system thinking with
+              hands-on engineering, allowing me to uncover edge cases early and
+              ship features confidently.
+            </p>
+            <p>
+              Outside of work, I mentor emerging developers and experiment with
+              new interaction models. I believe the best products align
+              strategic goals with thoughtful execution.
+            </p>
+          </div>
+          <dl class="stats">
+            <div>
+              <dt>5+</dt>
+              <dd>Years building products</dd>
+            </div>
+            <div>
+              <dt>20+</dt>
+              <dd>Successful launches</dd>
+            </div>
+            <div>
+              <dt>6</dt>
+              <dd>Cross-functional teams supported</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section muted" id="skills" aria-labelledby="skills-title">
+        <div class="container section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Capabilities</p>
+            <h2 id="skills-title">
+              A balanced toolkit for building resilient platforms.
+            </h2>
+          </div>
+          <div class="grid three">
+            <article class="card">
+              <h3>Frontend Engineering</h3>
+              <p>
+                Building accessible, component-driven interfaces with modern
+                JavaScript, TypeScript, React, and performance-first CSS
+                architectures.
+              </p>
+              <ul>
+                <li>Design systems</li>
+                <li>State management</li>
+                <li>Testing & accessibility</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Backend Services</h3>
+              <p>
+                Designing APIs and microservices with reliable data flows using
+                Node.js, Express, and cloud-native patterns tailored for
+                scalability.
+              </p>
+              <ul>
+                <li>API design</li>
+                <li>Database modeling</li>
+                <li>CI/CD automation</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Product Leadership</h3>
+              <p>
+                Partnering with design, product, and stakeholders to define
+                roadmaps, manage scope, and deliver meaningful business
+                outcomes.
+              </p>
+              <ul>
+                <li>Strategic planning</li>
+                <li>Team mentorship</li>
+                <li>Metrics-driven decisions</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="projects-title">
+              Projects that blend thoughtful design and robust engineering.
+            </h2>
+          </div>
+          <div class="grid two">
+            <article class="project-card">
+              <div class="project-meta">
+                <p class="project-category">
+                  Product Strategy · Platform Engineering
+                </p>
+                <h3>Nova Analytics Dashboard</h3>
+                <p>
+                  Led the architecture of a data visualization suite for
+                  enterprise clients, enabling real-time insights and custom
+                  reporting for 50K+ users.
+                </p>
+              </div>
+              <ul class="project-tags">
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>GraphQL</li>
+              </ul>
+              <a class="project-link" href="#">View case study</a>
+            </article>
+            <article class="project-card">
+              <div class="project-meta">
+                <p class="project-category">UX Engineering · Automation</p>
+                <h3>Aurora Design System</h3>
+                <p>
+                  Designed and implemented a reusable design system with
+                  automated accessibility checks, reducing feature delivery time
+                  by 30% across the organization.
+                </p>
+              </div>
+              <ul class="project-tags">
+                <li>Storybook</li>
+                <li>Sass</li>
+                <li>Jest</li>
+              </ul>
+              <a class="project-link" href="#">Explore components</a>
+            </article>
+            <article class="project-card">
+              <div class="project-meta">
+                <p class="project-category">
+                  Cloud Infrastructure · Integrations
+                </p>
+                <h3>Pulse Operations Suite</h3>
+                <p>
+                  Built a modular operations toolkit with secure integrations,
+                  streamlining workflows for distributed teams and improving
+                  response times by 45%.
+                </p>
+              </div>
+              <ul class="project-tags">
+                <li>Node.js</li>
+                <li>PostgreSQL</li>
+                <li>AWS</li>
+              </ul>
+              <a class="project-link" href="#">See architecture</a>
+            </article>
+            <article class="project-card">
+              <div class="project-meta">
+                <p class="project-category">Mobile Experience · Growth</p>
+                <h3>Stride Wellness App</h3>
+                <p>
+                  Shipped a cross-platform experience focused on personalized
+                  health plans, increasing daily active users by 60% within the
+                  first quarter.
+                </p>
+              </div>
+              <ul class="project-tags">
+                <li>React Native</li>
+                <li>Expo</li>
+                <li>Firebase</li>
+              </ul>
+              <a class="project-link" href="#">Preview prototype</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section muted"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="container section-inner">
+          <div class="section-header">
+            <p class="eyebrow">Experience</p>
+            <h2 id="experience-title">
+              Partnering with organizations to ship lasting impact.
+            </h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-meta">
+                <p class="timeline-period">2021 — Present</p>
+                <p class="timeline-location">Principal Engineer · Lumos Labs</p>
+              </div>
+              <p>
+                Leading a platform modernization initiative, mentoring a team of
+                eight engineers, and collaborating with product leads to shape
+                quarterly roadmaps.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-meta">
+                <p class="timeline-period">2018 — 2021</p>
+                <p class="timeline-location">
+                  Senior Software Engineer · Horizon Tech
+                </p>
+              </div>
+              <p>
+                Owned end-to-end delivery of core web experiences, introduced
+                automated testing pipelines, and improved performance scores by
+                40%.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-meta">
+                <p class="timeline-period">2016 — 2018</p>
+                <p class="timeline-location">
+                  Full-Stack Developer · Freelance
+                </p>
+              </div>
+              <p>
+                Built bespoke web applications for startups, handling everything
+                from discovery to deployment and ongoing optimization.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container section-inner contact">
+          <div class="section-header">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">
+              Let's create something remarkable together.
+            </h2>
+            <p>
+              Reach out via email or connect on LinkedIn to talk about your next
+              project, product roadmap, or collaboration opportunity.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-card" href="mailto:hello@muditbhadouria.com">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">hello@muditbhadouria.com</span>
+            </a>
+            <a
+              class="contact-card"
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/muditbhadouria</span>
+            </a>
+            <a
+              class="contact-card"
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/muditbhadouria</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Mudit Bhadouria. All rights reserved.</p>
+        <button class="top-link" data-scroll-to="top">Back to top</button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
