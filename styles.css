@@ -169,6 +169,10 @@ img {
   background: transparent;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
 }
 
 .nav-toggle:focus {
@@ -179,9 +183,12 @@ img {
   display: block;
   width: 24px;
   height: 2px;
-  margin: 4px 0;
   background: var(--color-text);
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 6px;
 }
 
 .theme-toggle {
