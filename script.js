@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const themeToggle = select('#theme-toggle');
+  const themeToggles = selectAll('[data-theme-toggle]');
   const THEME_STORAGE_KEY = 'theme-preference';
 
   const readStoredTheme = () => {
@@ -49,17 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const applyTheme = (theme) => {
     const isLight = theme === 'light';
+    const targetLabel = isLight
+      ? 'Switch to dark theme'
+      : 'Switch to light theme';
+
     document.body.classList.toggle('theme-light', isLight);
 
-    if (themeToggle) {
-      const targetLabel = isLight
-        ? 'Switch to dark theme'
-        : 'Switch to light theme';
-      themeToggle.setAttribute('aria-pressed', String(isLight));
-      themeToggle.setAttribute('aria-label', targetLabel);
-      themeToggle.setAttribute('title', targetLabel);
-      themeToggle.dataset.theme = isLight ? 'light' : 'dark';
-    }
+    themeToggles.forEach((toggle) => {
+      toggle.setAttribute('aria-pressed', String(isLight));
+      toggle.setAttribute('aria-label', targetLabel);
+      toggle.setAttribute('title', targetLabel);
+      toggle.dataset.theme = isLight ? 'light' : 'dark';
+    });
   };
 
   const storedTheme = readStoredTheme();
@@ -75,15 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyTheme(initialTheme);
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
       const nextTheme = document.body.classList.contains('theme-light')
         ? 'dark'
         : 'light';
+
       applyTheme(nextTheme);
       writeStoredTheme(nextTheme);
+
+      if (
+        toggle.classList.contains('theme-toggle--nav') &&
+        navigation &&
+        navigation.classList.contains('is-open') &&
+        navToggle
+      ) {
+        navigation.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
-  }
+  });
 
   if (!storedTheme && typeof window.matchMedia === 'function') {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');

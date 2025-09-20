@@ -46,12 +46,67 @@
               <li><a href="#projects">Projects</a></li>
               <li><a href="#experience">Experience</a></li>
               <li><a href="#contact">Contact</a></li>
+              <li class="nav-theme-item">
+                <button
+                  class="theme-toggle theme-toggle--nav"
+                  type="button"
+                  data-theme-toggle
+                  aria-pressed="false"
+                  aria-label="Switch to light theme"
+                >
+                  <span
+                    class="theme-toggle-icon theme-toggle-icon--dark"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="theme-toggle-icon theme-toggle-icon--light"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="4.25"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        d="M12 2.5v2.25M12 19.25v2.25M4.5 12H2.25M21.75 12H19.5M5.75 5.75l-1.6-1.6M19.85 19.85l-1.6-1.6M5.75 18.25l-1.6 1.6M19.85 4.15l-1.6 1.6"
+                      />
+                    </svg>
+                  </span>
+                  <span class="theme-toggle-text">Theme</span>
+                </button>
+              </li>
             </ul>
           </nav>
           <button
             id="theme-toggle"
-            class="theme-toggle"
+            class="theme-toggle theme-toggle--header"
             type="button"
+            data-theme-toggle
             aria-pressed="false"
             aria-label="Switch to light theme"
           >
